@@ -1,0 +1,23 @@
+<div class="body">
+  <header>
+    <h1>To Do</h1>
+
+    <label for="addItemInput">What would you like to do today?</label>
+
+    <input
+      #newItem
+      placeholder="add an item"
+      (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+      class="lg-text-input"
+      id="addItemInput"
+    />
+  </header>
+  <div class="main">
+    <!-- <button class="btn-primary" (click)="addItem(newItem.value)">Add</button> -->
+    <ul>
+      <li *ngFor="let item of items; index as i">
+        {{ i }} {{ item.description }}
+      </li>
+    </ul>
+  </div>
+</div>
